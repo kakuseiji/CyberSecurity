@@ -7,3 +7,8 @@
 具体的には、クラウドサービス運用にかかるコストや時間に寄与するパラメーターを、
 どう定義して、どうチューニングしていくかということです。つまり、クラウドサービスの価値を高めつつ、
 コストや時間をいかに削減していくかが『運用の最適化』になります」
+
+
+About the ‘operation’ and ‘optimization’ of services utilizing the cloud:
+
+‘Operation’ refers to activities aimed at maintaining and enhancing the ‘value’ of the functions and quality of the developed and implemented cloud services at a high level. In addition, support that empathizes with users and resolves issues is also an important element of ‘operation.’ On the other hand, ‘optimization’ refers to activities aimed at achieving a specific purpose. It involves tuning parameters that contribute to that purpose. Specifically, it’s about defining and tuning parameters that contribute to the cost and time of cloud service operations. In other words, ‘optimization of operation’ is about enhancing the value of cloud services while reducing costs and time.
