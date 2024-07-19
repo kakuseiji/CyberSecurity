@@ -1,0 +1,43 @@
+import socket
+
+def scan_port(ip, port):
+    try:
+        # ソケットを作成し、指定されたIPとポートに接続を試みます
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            s.settimeout(1)
+            result = s.connect_ex((ip, port))
+            if result == 0:
+                print(f"ポート {port} は開いています。")
+                # バナー掴みを行います
+                s.send(b'GET HTTP/1.1 \\r\\n')
+                banner = s.recv(1024)
+                print(f"バナー: {banner}")
+            else:
+                print(f"ポート {port} は閉じています。")
+    except socket.error as e:
+        print(f"エラー: {e}")
+
+# 使用例
+scan_port('192.168.1.1', 80)
+
+
+
+
+
+commonly checked server port numbers and their typical uses in English:
+
+Port 20/21 (FTP): Used for File Transfer Protocol (FTP). It’s utilized for uploading and downloading files.
+Port 22 (SSH): Used for Secure Shell (SSH). It provides a secure network protocol for logging into another computer over a network.
+Port 23 (Telnet): Used for Telnet. It offers a non-encrypted command-line interface access to a remote computer.
+Port 25 (SMTP): Used for Simple Mail Transfer Protocol (SMTP). It’s employed for sending emails.
+Port 53 (DNS): Used for Domain Name System (DNS). It translates domain names to IP addresses.
+Port 80 (HTTP): Used for Hypertext Transfer Protocol (HTTP). It’s used for delivering web pages.
+Port 110 (POP3): Used for Post Office Protocol version 3 (POP3). It’s used for receiving emails.
+Port 143 (IMAP): Used for Internet Message Access Protocol (IMAP). It’s used for managing and retrieving emails.
+Port 443 (HTTPS): Used for HTTP Secure (HTTPS). It’s used for delivering encrypted web pages.
+Port 3306 (MySQL): Used for MySQL database server. It’s used for database access.
+Port 3389 (RDP): Used for Remote Desktop Protocol (RDP). It’s used for remote desktop connections.
+
+
+These ports are often opened depending on the services provided by the server, and for security reasons, it is recommended to keep unnecessary ports closed.
+Also, when conducting a port scan, ensure you have permission for the network or server in question to avoid legal issues. 
